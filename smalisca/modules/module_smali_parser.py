@@ -205,7 +205,7 @@ class SmaliParser(ModuleBase):
                   otherwise False
 
         """
-        match = re.search("const-string\s+(?P<const>.*)", line)
+        match = re.search("const-string(?:\/jumbo)?\s+(?P<const>.*)", line)
         if match:
             log.debug("\t\tFound const-string: %s" % match.group('const'))
             return match.group('const')
